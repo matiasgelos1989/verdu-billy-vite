@@ -6,10 +6,9 @@ export const Footer = () => {
     <Paper elevation={10} 
     sx={{
       marginTop: 'calc(10% + 60px)',
-      position: 'fixed',
+      position: 'sticky',
       bottom: 0,
       padding: 2,
-      width: '100%',
       textAlign:'center',
       backgroundColor: 'black',
       

@@ -37,7 +37,7 @@ const handleFilter = (e) => {
         sx={{
           display: "flex",
           flexDirection: "column",
-          "& .MuiTextField-root": { width: "25ch" },
+          "& .MuiTextField-root": { width: "23ch" },
         }}
       >
         <TextField label={"Producto"} id="producto" onChange={(e) => setSearchTerm(e.target.value)} />
@@ -46,7 +46,7 @@ const handleFilter = (e) => {
       <Button variant="contained" onClick={handleFilter}>
       <SearchIcon 
       value={searchTerm}
-      fontSize="large"
+      fontSize="small"
       color="default">
       </SearchIcon>Buscar
       </Button>

@@ -1,38 +1,41 @@
-import React , {useEffect} from "react";
+import React from "react";
+// , {useEffect} 
 // import { useState } from "react";
-import { Link ,useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+// ,useNavigate 
+import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
-import Button from "@mui/material/Button";
+// import Typography from "@mui/material/Typography";
+// import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
+import { IconCart } from "./iconCart";
 import HomeIcon from "@mui/icons-material/Home";
-import ManageAccountsIcon from '@mui/icons-material/ManageAccounts';
+// import ManageAccountsIcon from '@mui/icons-material/ManageAccounts';
 import Tooltip from '@mui/material/Tooltip';
-import LoginIcon from '@mui/icons-material/Login';
-import { useAuth } from '../context/AuthContext';
-import LogoutIcon from '@mui/icons-material/Logout';
-import FormatListNumberedIcon from '@mui/icons-material/FormatListNumbered';
-import { IconCart } from "./IconCart";
+// import LoginIcon from '@mui/icons-material/Login';
+// import { useAuth } from '../context/AuthContext';
+// import LogoutIcon from '@mui/icons-material/Logout';
+// import FormatListNumberedIcon from '@mui/icons-material/FormatListNumbered';
 
 export const Header = () => {
+  // isUserLogged,logout,
+  // const {   login } = useAuth();
+  // const navigate = useNavigate();
 
-  const { isUserLogged, logout, login } = useAuth();
-  const navigate = useNavigate();
+//   useEffect(() => {
+//     const isAuthenticated = localStorage.getItem('token');
+//     if (isAuthenticated) {
+//         login(isAuthenticated)
+//     }
+// }, []);
 
-  useEffect(() => {
-    const isAuthenticated = localStorage.getItem('token');
-    if (isAuthenticated) {
-        login(isAuthenticated)
-    }
-}, []);
-
-const handleLogout = () => {
-    logout();
-    navigate('/')
-}
+// const handleLogout = () => {
+//     logout();
+//     navigate('/')
+// }
 
   return (
-    <div sx={{ flexGrow: 1, position:'sticky',width:'100%',top:0, zIndex:99}}>
+    <Box sx={{ flexGrow: 1, position:'sticky',top:0, zIndex:99}}>
       <div
         style={{
           backgroundColor: "black",
@@ -41,25 +44,15 @@ const handleLogout = () => {
         }}
       >
         <Toolbar>
-            <Typography variant="h3" component="div" sx={{ flexGrow: 0, display:'flex' }}>
-            
-            
-          
-            <Tooltip fontSize='small' title="Home" arrow>
+        <Tooltip fontSize='large' title="Home" arrow>
               <Link to="/">
                 <IconButton aria-label="home">
                   <HomeIcon fontSize="large" sx={{color:"white"}} />
                 </IconButton>
               </Link>
             </Tooltip>
-            <Tooltip fontSize='small' title="Carrito" arrow>
-              <Link to="/Cart">
-                <IconButton aria-label="cart">
-                  <IconCart fontSize="small" />
-                </IconButton>
-              </Link>
-            </Tooltip>
-            </Typography>
+            {/*
+            
             {isUserLogged ?<> 
                 <Tooltip fontSize='small' title="Panel admin" arrow>
                     <Link to='/panel'>
@@ -93,14 +86,21 @@ const handleLogout = () => {
                       </Button>
                   </Link>
                 </Tooltip>
-          }
-        <div style={{padding:'10px',color:'white', margin:'auto', fontFamily:'courier new', fontSize:'16px'}}>
-            <div style={{border:'1px solid white',padding:'0px 20px'}}>
-              <h2>Lo De Billy</h2>
+          } */}
+        <div style={{padding:'0px',color:'white',margin:'auto', fontFamily:'courier new', fontSize:'14px'}}>
+            <div style={{border:'1px solid white',padding:'0px 8px'}}>
+              <h4>Lo De Billy</h4>
             </div>
           </div>
+          <Tooltip title="Carrito" arrow>
+              <Link to="/Cart">
+                <IconButton aria-label="cart">
+                  <IconCart/>
+                </IconButton>
+              </Link>
+            </Tooltip>
         </Toolbar>
       </div>
-    </div>
+    </Box>
   );
 };

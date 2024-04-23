@@ -17,9 +17,7 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogTitle from '@mui/material/DialogTitle';
 import {createPedido} from '../api/pedidos.api';
 import { TextField } from "@mui/material";
-import logo from '../assets/logo.jpg'
-
-
+// import logo from '../images/logo.jpg'
 
 export const Cart = () => {
   const style = {
@@ -104,7 +102,7 @@ export const Cart = () => {
   };
 
   return (
-    <div style={{ height: "1px" }}>
+    <div style={{}}>
       {cart.length > 0 ? (
         <div style={{ minWidth: "650px",padding:'10px' }}>
           <div
@@ -318,3 +316,32 @@ export const Cart = () => {
     </div>
   );
 };
+
+// <div style={{alignItems:'center'}} key={cartItem._id}>
+// <Box key={cartItem._id} sx={{ width: '100%',margin:'5px' }}>
+//   <Stack spacing={1}>
+//     <Item  sx={{ display:'flex'}}>
+//       <div style={{width:'400px', display:'flex'}}>
+//       <img alt={cartItem.product.name} src={cartItem.product.url} style={{width:30,height:30}}/>
+//       <p style={{margin:'0 50px ', fontWeight:'800'}}>{cartItem.product.name}</p>
+//       <p style={{margin:'5px 0', fontWeight:'800'}}>{cartItem.product.modalidadVenta}</p>
+//       <p style={{width:'50px',margin:'5px', fontWeight:'800'}}>${cartItem.product.precio}</p>
+//       </div>
+
+//      <Counter cartItem={cartItem}></Counter>
+
+//       <p style={{fontWeight:'800',width:'100px'}}>$ {cartItem.product.precio * cartItem.quantity}</p>
+
+//       <IconButton
+//           color="error"
+//           aria-label="Delete"
+//           size='large'
+//           onClick={() => removeFromCart(cartItem)}
+//       >
+//           <DeleteIcon fontSize='large' />
+//       </IconButton>
+//     </Item>
+
+//   </Stack>
+// </Box>
+/* </div> */

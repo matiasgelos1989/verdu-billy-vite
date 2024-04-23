@@ -70,14 +70,13 @@ const clickDelete = (id) => {
             key={item._id}
             style={{
               display: "flex",
-              margin: "10px",
+              margin: "6px",
               boxShadow: "4px 2px 15px black",
-              borderRadius: "10px",
             }}
           >
-            <Card sx={{ width: 200, textAlign: "end" }}>
+            <Card sx={{ minWidth:'140px', textAlign: "center" }}>
               <CardMedia
-                sx={{ height: 100, width: 100, margin: "auto" }}
+                sx={{ height: 40, width: 40, margin: "auto" }}
                 image={item.url}
                 title={item.name}
               />
@@ -85,18 +84,18 @@ const clickDelete = (id) => {
                 <Typography
                   sx={{ textAlign: "center" }}
                   gutterBottom
-                  variant="h5"
-                  component="h5"
+                  variant="p"
+                  component="div"
                 >
                   {item.name}
                 </Typography>
-                <Typography variant="h5" color="text.primary">
-                  <div style={{ display: "block" }}>
-                    <h5 style={{ margin: 10, textAlign: "center" }}>
-                      {item.modalidadVenta}
-                    </h5>
-                    <h5 style={{ margin: 10, textAlign: "center" }}>
+                <Typography variant="p" color="text.primary">
+                  <div style={{ display: "flex" }}>
+                    <h5 style={{ margin: 3}}>
                       $ {new Intl.NumberFormat().format(item.precio)}
+                    </h5>
+                    <h5 style={{ margin: 3}}>
+                      X {item.modalidadVenta}
                     </h5>
                   </div>
                 </Typography>
@@ -105,13 +104,13 @@ const clickDelete = (id) => {
                 <IconButton color="primary" aria-label="Edit" size="large" 
                 onClick={(e) => handleEdit(item)}
                 >
-                  <EditIcon fontSize="large" color="primary" />
+                  <EditIcon fontSize="medium" color="primary" />
                 </IconButton>
               </Tooltip>
 
               <Tooltip fontSize="small" title="Eliminar producto" arrow>
                 <IconButton color="error" aria-label="Delete" size="large" onClick={(e) => clickDelete(item._id)}>
-                  <DeleteIcon fontSize="large" />
+                  <DeleteIcon fontSize="medium" />
                 </IconButton>
               </Tooltip>
             </Card>

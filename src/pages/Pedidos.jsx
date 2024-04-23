@@ -10,6 +10,7 @@ import { getAllPedidos, removePedido, updatePedido } from "../api/pedidos.api";
 // import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import Button from "@mui/material/Button";
 import AppBar from '@mui/material/AppBar';
+import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Stack from '@mui/material/Stack';
@@ -36,13 +37,7 @@ const [pedidos, setPedidos] = useState([]);
 const pedidosCompletos = pedidos.filter((pedido) => pedido.complete === true);
 const pedidosPendientes = pedidos.filter((pedido) => pedido.complete === false);
 const [mostrarPendientes,setMostrarPendientes] = useState(true)
-const [pedido,setPedido] = useState({
-  name: '',
-  phone: '',
-  pedido: '',
-  precioTotal: '',
-  complete: ''
-})
+
 
 const [cambio, setCambio] = useState(false)
 
@@ -90,7 +85,6 @@ const handleCompletarPedido = (cliente) => {
     _id: cliente._id
   }  
   if(response) {
-      (setPedido(newPedido) );
       pedidosTrue(newPedido);
   } ;
 }
@@ -106,17 +100,18 @@ const pedidosTrue = (pedido) => {
 return (
     <div style={{ display: "block", marginBottom: "5%" }}>
    
+   <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static" sx={{backgroundColor:'black'}}>
           <Toolbar>
-            <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-                <Stack spacing={2} direction="row">
+            <Typography variant="h6" component="div" >
+                <Stack spacing={1} direction="row">
                   <StyledBadge badgeContent={pedidosPendientes.length} color="primary">
-                        <Button onClick={() => handleClickPendientes()} sx={{color:'white'}} color='secondary' variant="contained">
+                        <Button onClick={() => handleClickPendientes()} sx={{color:'white', width:'min-content'}} color='secondary' variant="contained">
                         Pedidos pendientes
                         </Button>
                   </StyledBadge>
                   <StyledBadge badgeContent={pedidosCompletos.length} color="primary">
-                      <Button onClick={()=>handleClickCompletos()} sx={{color:'white',marginLeft:10}} color='secondary' variant="contained">
+                      <Button onClick={()=>handleClickCompletos()} sx={{color:'white',marginLeft:4,width:'min-content'}} color='secondary' variant="contained">
                         Pedidos completos
                       </Button>
                   </StyledBadge>
@@ -124,11 +119,12 @@ return (
             </Typography>
           </Toolbar>
       </AppBar>
+    </Box>
       
         {mostrarPendientes ? 
             
 
-              <PedidosPendientes fetchData={fetchData} pedidosPendientes={pedidosPendientes} clickDelete={clickDelete} handleCompletarPedido={handleCompletarPedido} pedidosCompletos={pedidosCompletos} setPedido={setPedido}></PedidosPendientes>
+              <PedidosPendientes fetchData={fetchData} pedidosPendientes={pedidosPendientes} clickDelete={clickDelete} handleCompletarPedido={handleCompletarPedido} pedidosCompletos={pedidosCompletos} ></PedidosPendientes>
           :
           
              <PedidosCompletos fetchData={fetchData} pedidosCompletos={pedidosCompletos} clickDelete={clickDelete} handleCompletarPedido={handleCompletarPedido}></PedidosCompletos>

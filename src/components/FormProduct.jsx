@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { TextField, Button } from "@mui/material";
+import { TextField, Box, Button } from "@mui/material";
 import Dialog from '@mui/material/Dialog';
 import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
@@ -57,7 +57,7 @@ function FormProduct(props) {
     };
 
     return (
-        <div>
+        <Box>
             <div style={{margin:'20px'}}>
             <Button variant="outlined" onClick={props.handleClickOpen}>
                 Nuevo Producto
@@ -118,7 +118,7 @@ function FormProduct(props) {
                     </DialogActions>
                 </form>
             </Dialog>
-        </div>
+        </Box>
     )
 }
 export default FormProduct;

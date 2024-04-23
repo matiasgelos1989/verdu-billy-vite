@@ -23,7 +23,6 @@ export const Application = () => {
                    <Routes>
                     {console.log('https://nodetiendaverdu-production.up.railway.app')}
                         <Route path="/" element={<HomePage />} />
-                        {/* <Route path="/terms" element={<FaqPage />} /> */}
                         <Route path="/registrar34520082" element={<RegisterUser />} />
                         <Route path="/login" element={<Login />} />
                         <Route element={<PrivateRoute />}>

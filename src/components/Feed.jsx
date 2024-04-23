@@ -14,21 +14,21 @@ export const Feed =  ( { products }) => {
 
 
   return (<>
-  <div style={{display:'flex',flexWrap:'wrap', marginBottom:"5%"}}>
+  <div style={{ display:'flex',flexWrap:'wrap'}}>
   {products.map((product) => (
-    <div key={product._id} style={{ display:'flex',margin:'10px',boxShadow:'4px 2px 15px black',borderRadius:'10px'}}>
-      <Card sx={{ width: 200, textAlign:'end'}}>
+    <div key={product._id} style={{minWidth:'160px', margin:'6px',boxShadow:'4px 2px 19px black'}}>
+      <Card sx={{textAlign:'center'}}>
       <CardMedia
-        sx={{ height: 70, width:70, margin:'auto',marginTop:1}}
+        sx={{ height: 40, width:40, margin:'auto',marginTop:1}}
         image={product.url}
         title={product.name}
        
       />
-      <CardContent sx={{padding:2}}>
-        <Typography sx={{textAlign:'center', margin:0, padding:0}} gutterBottom variant="h5" component="div">
+      <CardContent sx={{padding:1}}>
+        <Typography sx={{textAlign:'center', margin:0, padding:0}} gutterBottom variant="p" component="div">
           {product.name}
         </Typography>
-        <Typography variant="h5" color="text.primary">
+        <Typography variant="p" color="text.primary">
           <div style={{display:'block'}}>
             <h5 style={{ margin:1, textAlign:'center'}}>{product.modalidadVenta}</h5>   
             <h5 style={{ margin:1, textAlign:'center'}}>$ {new Intl.NumberFormat().format(product.precio)}</h5>
@@ -38,7 +38,7 @@ export const Feed =  ( { products }) => {
       {cart.find((cartItem) => cartItem.product._id ===  product._id) === undefined ?
         <Tooltip fontSize='small' title="Agregar al carrito" arrow>
 
-        <Button onClick={() => addToCart(product)} sx={{textAlign:'start'}} size="small">
+        <Button onClick={() => addToCart(product)}  size="small">
         
           <AddShoppingCartSharpIcon     fontSize='large'>
       
