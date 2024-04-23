@@ -17,7 +17,7 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogTitle from '@mui/material/DialogTitle';
 import {createPedido} from '../api/pedidos.api';
 import { TextField } from "@mui/material";
-// import logo from '../images/logo.jpg'
+import logo from '../assets/logo.jpg'
 
 export const Cart = () => {
   const style = {
