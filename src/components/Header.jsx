@@ -8,7 +8,7 @@ import Toolbar from "@mui/material/Toolbar";
 // import Typography from "@mui/material/Typography";
 // import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
-import { IconCart } from "./iconCart";
+import { IconCart } from "../components/IconCart";
 import HomeIcon from "@mui/icons-material/Home";
 // import ManageAccountsIcon from '@mui/icons-material/ManageAccounts';
 import Tooltip from '@mui/material/Tooltip';
