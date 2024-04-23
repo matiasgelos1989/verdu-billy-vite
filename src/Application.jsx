@@ -16,7 +16,7 @@ import { RegisterUser } from './pages/RegisterUser';
 
 export const Application = () => {
   
-  return (<div>
+  return (<div> 
               <CartProvider>
                 <AuthProvider>
                    <Header></Header>

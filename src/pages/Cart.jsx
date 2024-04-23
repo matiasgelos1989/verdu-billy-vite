@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useCart } from "../context/CartContext";
-import Box from "@mui/material/Box";
+import {Box} from "@mui/material/";
 import Paper from "@mui/material/Paper";
 import { Counter } from "../components/Counter";
 import DeleteIcon from "@mui/icons-material/Delete";
@@ -102,9 +102,11 @@ export const Cart = () => {
   };
 
   return (
-    <div style={{}}>
+    <div >
       {cart.length > 0 ? (
-        <div style={{ minWidth: "650px",padding:'10px' }}>
+        <div 
+        // style={{ minWidth: "650px",padding:'10px' }}
+        >
           <div
             style={{ display: "block", paddingBottom: "20px", textAlign: "center" }}
           >
@@ -128,13 +130,11 @@ export const Cart = () => {
               
             </div>
             <TableContainer component={Paper}>
-                <Table sx={{ minWidth: 630 }} aria-label="simple table">
+                <Table sx={{ }} aria-label="simple table">
                   <TableHead >
                     <TableRow>
                       <TableCell></TableCell>
                       <TableCell sx={{textAlign:'start'}}>Nombre</TableCell>
-                      <TableCell sx={{textAlign:'start'}} >Modo venta</TableCell>
-                      <TableCell sx={{textAlign:'start'}}>Precio x unidad</TableCell>
                       <TableCell >Cantidad</TableCell>
                       <TableCell sx={{ fontWeight: "600" }} >Total x unidad</TableCell>
                       <TableCell ></TableCell>
@@ -152,17 +152,15 @@ export const Cart = () => {
                       >
                         <TableCell sx={{padding:0}}>
                           {" "}
-                          <Avatar alt="Product Image" src={cartItem.product.url} />
+                          <Avatar alt="Product Image" src={cartItem.product.url} sx={{width:'50px'}} />
                         </TableCell>
                         <TableCell
-                          sx={{ fontWeight: "800",padding:0 }}
+                          sx={{ fontWeight: "400",padding:0 }}
                           component="th"
                           scope="cartItem"
                         >
-                          {cartItem.product.name}
+                          {cartItem.product.name} x {cartItem.product.modalidadVenta}
                         </TableCell>
-                        <TableCell sx={{padding:0}} align="left">{cartItem.product.modalidadVenta}</TableCell>
-                        <TableCell sx={{padding:0}} align="left">$ {new Intl.NumberFormat().format(cartItem.product.precio)}</TableCell>
                         <TableCell sx={{padding:0}} ><Counter cartItem={cartItem} /></TableCell>
                         <TableCell sx={{padding:0, fontWeight: "800" }} align="left">$ {new Intl.NumberFormat().format(cartItem.quantity * cartItem.product.precio)}</TableCell>
                         {/* {console.log(cartItem.quantity)} */}
@@ -183,28 +181,30 @@ export const Cart = () => {
               </TableContainer>
             
             <div
-              style={{
-                backgroundColor: "lightgreen",
-                position: "sticky",
-                bottom: 32,
-                zIndex: 99,
-                display: "block",
-                textAlign:'center',
-                border: "1px solid lightgrey",
-                borderRadius: "0 0 10px 10px",
-                }}
+              // style={{
+              //   backgroundColor: "lightgreen",
+              //   position: "sticky",
+              //   bottom: 32,
+              //   zIndex: 99,
+              //   display: "block",
+              //   textAlign:'center',
+              //   border: "1px solid lightgrey",
+              //   borderRadius: "0 0 10px 10px",
+              //   }}
             >
-              <div style={{ height:'50px',display: "flex", textAlign: "center", justifyContent:'center' }}>
+              <div 
+              style={{ display: "flex"}}
+              >
                 <p
                   style={{
-                    marginLeft: "10px",
+                    // marginLeft: "10px",
                     fontFamily: "sans-serif",
-                    marginRight: "50px",
+                    // marginRight: "50px",
                     fontSize: "16px",
                     fontWeight: "800",
                   }}
                 >
-                  Total de la compra{" "}
+                  Total de la compra
                 </p>
                 <p
                   style={{
@@ -212,14 +212,16 @@ export const Cart = () => {
                     fontSize: "16px",
                     fontWeight: "800",
                     color: "black",
+                    borderBottom:'4px solid black',
+                    borderTop:'4px solid black',
                     }}
                 >
                   ${ new Intl.NumberFormat().format(total) }
                 </p>
-                <div style={{ padding: "8px" }}>
+                <div style={{ padding: "8px", justifyContent:'center',justifyItems:'center',display:'flex', flexDirection:'column' }}>
                   <Button
                     variant="contained"
-                    sx={{ height: "80%", marginLeft: "20px" }}
+                    // sx={{ height: "80%", marginLeft: "20px" }}
                     onClick={handleOpenOne}
                   >
                     Continuar
@@ -310,7 +312,7 @@ export const Cart = () => {
         </div>
       ) : (
         <div style={{textAlign:'center',padding:20, margin:10, border:'1px solid black', boxShadow:'1px 1px 1px 1px'}}>
-          <h1>El carrito está vacío</h1>
+          <h3>El carrito está vacío</h3>
         </div>
       )}
     </div>

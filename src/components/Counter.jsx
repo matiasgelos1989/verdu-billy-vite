@@ -21,7 +21,7 @@ export const Counter = ( {cartItem}) => {
      justifyContent:'center',
        display:'flex',
        width:'40px',
-       fontWeight:'800',
+       fontWeight:'500',
        color: 'black',
        fontSize:'20px'
       }}>

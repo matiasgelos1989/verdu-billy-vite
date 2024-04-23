@@ -1,41 +1,37 @@
 import React from "react";
-// , {useEffect} 
-// import { useState } from "react";
-import { Link } from "react-router-dom";
-// ,useNavigate 
-import Box from "@mui/material/Box";
+import { useState ,useEffect} from "react";
+import { Link ,useNavigate } from "react-router-dom";
 import Toolbar from "@mui/material/Toolbar";
-// import Typography from "@mui/material/Typography";
-// import Button from "@mui/material/Button";
+import Typography from "@mui/material/Typography";
+import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
 import { IconCart } from "../components/IconCart";
 import HomeIcon from "@mui/icons-material/Home";
-// import ManageAccountsIcon from '@mui/icons-material/ManageAccounts';
+import ManageAccountsIcon from '@mui/icons-material/ManageAccounts';
 import Tooltip from '@mui/material/Tooltip';
-// import LoginIcon from '@mui/icons-material/Login';
-// import { useAuth } from '../context/AuthContext';
-// import LogoutIcon from '@mui/icons-material/Logout';
-// import FormatListNumberedIcon from '@mui/icons-material/FormatListNumbered';
+import LoginIcon from '@mui/icons-material/Login';
+import { useAuth } from '../context/AuthContext';
+import LogoutIcon from '@mui/icons-material/Logout';
+import FormatListNumberedIcon from '@mui/icons-material/FormatListNumbered';
 
 export const Header = () => {
-  // isUserLogged,logout,
-  // const {   login } = useAuth();
-  // const navigate = useNavigate();
+  
+  const {  isUserLogged,logout, login } = useAuth();
+  const navigate = useNavigate();
 
-//   useEffect(() => {
-//     const isAuthenticated = localStorage.getItem('token');
-//     if (isAuthenticated) {
-//         login(isAuthenticated)
-//     }
-// }, []);
+  useEffect(() => {
+    const isAuthenticated = localStorage.getItem('token');
+    if (isAuthenticated) {
+        login(isAuthenticated)
+    }
+}, []);
 
-// const handleLogout = () => {
-//     logout();
-//     navigate('/')
-// }
+const handleLogout = () => {
+    logout();
+    navigate('/')
+}
 
   return (
-    <Box sx={{ flexGrow: 1, position:'sticky',top:0, zIndex:99}}>
       <div
         style={{
           backgroundColor: "black",
@@ -44,14 +40,8 @@ export const Header = () => {
         }}
       >
         <Toolbar>
-        <Tooltip fontSize='large' title="Home" arrow>
-              <Link to="/">
-                <IconButton aria-label="home">
-                  <HomeIcon fontSize="large" sx={{color:"white"}} />
-                </IconButton>
-              </Link>
-            </Tooltip>
-            {/*
+      
+            
             
             {isUserLogged ?<> 
                 <Tooltip fontSize='small' title="Panel admin" arrow>
@@ -71,6 +61,14 @@ export const Header = () => {
               </>
             : ''}
             {!isUserLogged ?
+            <>
+              <Tooltip fontSize='large' title="Home" arrow>
+              <Link to="/">
+                <IconButton aria-label="home">
+                  <HomeIcon fontSize="large" sx={{color:"white"}} />
+                </IconButton>
+              </Link>
+            </Tooltip>
                 <Tooltip fontSize='small' title="Login administrador" arrow>
                   <Link to='/login'>
                       <Button >
@@ -78,6 +76,7 @@ export const Header = () => {
                       </Button>
                   </Link>
                 </Tooltip>
+                </>
                 :
                 <Tooltip fontSize='small' title="Logout" arrow>
                   <Link to='/'>
@@ -86,12 +85,14 @@ export const Header = () => {
                       </Button>
                   </Link>
                 </Tooltip>
-          } */}
-        <div style={{padding:'0px',color:'white',margin:'auto', fontFamily:'courier new', fontSize:'14px'}}>
-            <div style={{border:'1px solid white',padding:'0px 8px'}}>
-              <h4>Lo De Billy</h4>
+               
+          }
+        <div style={{padding:'10px',color:'white',margin:'auto', fontFamily:'courier new', minWidth:'max-content'}}>
+            <div style={{border:'1px solid white',padding:'0px 5px'}}>
+              <h3 style={{margin:'15px 0px'}}>Lo De Billy</h3>
             </div>
           </div>
+          {!isUserLogged ?
           <Tooltip title="Carrito" arrow>
               <Link to="/Cart">
                 <IconButton aria-label="cart">
@@ -99,8 +100,8 @@ export const Header = () => {
                 </IconButton>
               </Link>
             </Tooltip>
+          : ''}
         </Toolbar>
       </div>
-    </Box>
   );
 };
