@@ -97,18 +97,18 @@ const handleCompletarPedido = (cliente) => {
 return (
     <div style={{ display: "block", marginBottom: "5%" }}>
    
-   <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static" sx={{backgroundColor:'black'}}>
+   <Box >
+      <AppBar position="sticky" sx={{backgroundColor:'black', padding:'10px'}}>
           <Toolbar>
-            <Typography variant="h6" component="div" >
+            <Typography variant="h2" component="div" >
                 <Stack spacing={1} direction="row">
                   <StyledBadge badgeContent={pedidosPendientes.length} color="primary">
-                        <Button onClick={() => handleClickPendientes()} sx={{color:'white', width:'min-content'}} color='secondary' variant="contained">
+                        <Button onClick={() => handleClickPendientes()} sx={{color:'white', width:'min-content',fontSize:'12px', border:'2px solid white'}} color='error' variant="text">
                         Pedidos pendientes
                         </Button>
                   </StyledBadge>
                   <StyledBadge badgeContent={pedidosCompletos.length} color="primary">
-                      <Button onClick={()=>handleClickCompletos()} sx={{color:'white',marginLeft:4,width:'min-content'}} color='secondary' variant="contained">
+                      <Button onClick={()=>handleClickCompletos()} sx={{color:'white',marginLeft:4,width:'min-content',fontSize:'12px'}} color='success' variant="contained">
                         Pedidos completos
                       </Button>
                   </StyledBadge>
