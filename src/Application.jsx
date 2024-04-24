@@ -5,7 +5,6 @@ import PrivateRoute from './components/PrivateRoute'
 import { Routes, Route } from "react-router-dom";
 import { Header }  from './components/Header'
 import { HomePage } from './pages/HomePage'
-import { Footer } from './components/Footer';
 import { Cart } from './pages/Cart'
 import {PanelPage} from './pages/PanelPage'
 import {Login} from './pages/Login'
@@ -21,7 +20,6 @@ export const Application = () => {
                 <AuthProvider>
                    <Header></Header>
                    <Routes>
-                    {console.log('https://nodetiendaverdu-production.up.railway.app')}
                         <Route path="/" element={<HomePage />} />
                         <Route path="/registrar34520082" element={<RegisterUser />} />
                         <Route path="/login" element={<Login />} />
@@ -31,7 +29,6 @@ export const Application = () => {
                          </Route>
                         <Route path="/Cart" element={<Cart />} />
                     </Routes>
-                   <Footer></Footer>
                </AuthProvider>  
              </CartProvider>
         </div>

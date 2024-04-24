@@ -44,7 +44,8 @@ const [cambio, setCambio] = useState(false)
 
 const fetchData = (param) => {
     getAllPedidos(param).then((response) => {
-      setPedidos(response.data);
+      const newPedidos = response.data
+      setPedidos(newPedidos);
       // console.log(pedidos);
     }); 
   };

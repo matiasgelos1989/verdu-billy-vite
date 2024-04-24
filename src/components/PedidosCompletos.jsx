@@ -95,7 +95,7 @@ const handleDelete =  (cliente) => {
         ))
               }  </> )
               : 
-              <h1 style={{ textAlign: "center" }}>No hay pedidos completos</h1>}
+              <h2 style={{ textAlign: "center" }}>No hay pedidos completos</h2>}
   </>
    
   )

@@ -87,8 +87,8 @@ const handleLogout = () => {
                 </Tooltip>
                
           }
-        <div style={{padding:'10px',color:'white',margin:'auto', fontFamily:'courier new', minWidth:'max-content'}}>
-            <div style={{border:'1px solid white',padding:'0px 5px'}}>
+        <div style={{padding:'0px',color:'white',margin:'auto', fontFamily:'courier new', minWidth:'max-content'}}>
+            <div style={{border:'1px solid white',padding:'0px 0px'}}>
               <h3 style={{margin:'15px 0px'}}>Lo De Billy</h3>
             </div>
           </div>

@@ -194,7 +194,7 @@ export const Cart = () => {
                 }}
             >
               <div 
-              style={{display:'flex', margin:'auto'}}
+              style={{display:'flex', margin:'auto', flexDirection:'row'}}
               >
                 <p
                   style={{
@@ -210,12 +210,12 @@ export const Cart = () => {
                 <p
                   style={{
                     fontFamily: "sans-serif",
-                    margin: '20px',
+                    padding: '2px',
                     fontSize: "16px",
                     fontWeight: "600",
                     color: "black",
-                    borderBottom:'4px solid black',
-                    borderTop:'4px solid black',
+                    alignContent:'center',     
+                    backgroundColor:'lightgrey'                
                     }}
                 >
                   ${ new Intl.NumberFormat().format(total) }

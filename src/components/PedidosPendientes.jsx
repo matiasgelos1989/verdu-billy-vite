@@ -128,7 +128,7 @@ export const PedidosPendientes = ({clickDelete, handleCompletarPedido,pedidosPen
            }
            </> )
             : 
-          <h1 style={{ textAlign: "center" }}>No hay pedidos pendientes</h1>}
+          <h2 style={{ textAlign: "center" }}>No hay pedidos pendientes</h2>}
    </>
    
   )

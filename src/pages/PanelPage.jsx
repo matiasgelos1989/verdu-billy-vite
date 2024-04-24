@@ -64,7 +64,7 @@ const clickDelete = (id) => {
   
        <FormProduct  product={product} open={open} fetchData={fetchData} handleClickOpen={handleClickOpen} handleClose={handleClose}></FormProduct>     
      
-      <div style={{ display: "flex", flexWrap: "wrap" ,marginBottom:"5%"}}>
+      <div style={{ display: "flex", flexWrap: "wrap" ,marginBottom:"5%", justifyContent:'center'}}>
         {products.map((item) => (
           <div
             key={item._id}

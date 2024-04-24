@@ -31,13 +31,13 @@ const handleFilter = (e) => {
 
   return (
     <>
-    <div style={{margin:'20px', display:'flex'}}>
+    <div style={{margin:'10px'}}>
       <form style={{display:'flex'}} onSubmit={handleFilter}>
       <Box
         sx={{
           display: "flex",
           flexDirection: "column",
-          "& .MuiTextField-root": { width: "23ch" },
+          "& .MuiTextField-root": { width: "20ch" },
         }}
       >
         <TextField label={"Producto"} id="producto" onChange={(e) => setSearchTerm(e.target.value)} />

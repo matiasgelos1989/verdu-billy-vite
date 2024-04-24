@@ -14,9 +14,9 @@ export const Feed =  ( { products }) => {
 
 
   return (<>
-  <div style={{ display:'flex',flexWrap:'wrap'}}>
+  <div style={{ display:'flex',flexWrap:'wrap', justifyContent:'center'}}>
   {products.map((product) => (
-    <div key={product._id} style={{minWidth:'160px', margin:'6px',boxShadow:'4px 2px 19px black'}}>
+    <div key={product._id} style={{minWidth:'140px' , maxWidth:'max-content', margin:'6px',boxShadow:'4px 2px 19px black'}}>
       <Card sx={{textAlign:'center'}}>
       <CardMedia
         sx={{ height: 40, width:40, margin:'auto',marginTop:1}}
