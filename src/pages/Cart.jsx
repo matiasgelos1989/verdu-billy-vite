@@ -25,11 +25,11 @@ export const Cart = () => {
     top: "50%",
     left: "50%",
     transform: "translate(-50%, -50%)",
-    width: 300,
+    width: 200,
     bgcolor: "background.paper",
     border: "2px solid #000",
     boxShadow: 24,
-    p: 4,
+    p: 2,
   };
 
   const { setShowCart, setCart, cart, removeFromCart } = useCart();
@@ -229,7 +229,6 @@ export const Cart = () => {
                     Continuar
                   </Button>
                   
-                      <Box>
                   <Dialog
                 open={openDatosCliente}
                 onClose={handleCloseOne}
@@ -276,7 +275,6 @@ export const Cart = () => {
                     </DialogActions>
                 </form>
             </Dialog>
-            </Box>
 
 
                   <Modal
@@ -295,14 +293,14 @@ export const Cart = () => {
                         variant="h5"
                         component="h2"                    
                       >
-                        Tu pedido ha sido creado con éxito{" "}
+                        Tu pedido ha sido creado con éxito
                         <CheckCircleIcon
                           fontSize="small"
                           color="success"
                         ></CheckCircleIcon>
                       </Typography>
                       <Typography id="modal-modal-description" sx={{ mt: 6 }}>
-                        te contactaremos via WhatsApp para confirmar pedido {"   "}
+                        te contactaremos via WhatsApp para confirmar pedido
                       </Typography>
                     </Box>
                   </Modal>
