@@ -25,7 +25,7 @@ export const Cart = () => {
     top: "50%",
     left: "50%",
     transform: "translate(-50%, -50%)",
-    width: 400,
+    width: 300,
     bgcolor: "background.paper",
     border: "2px solid #000",
     boxShadow: 24,
@@ -102,10 +102,10 @@ export const Cart = () => {
   };
 
   return (
-    <div >
+    <div style={{textAlign:'center', display:'flex', flexDirection:'column'}} >
       {cart.length > 0 ? (
         <div 
-        // style={{ minWidth: "650px",padding:'10px' }}
+        style={{ padding:'10px' }}
         >
           <div
             style={{ display: "block", paddingBottom: "20px", textAlign: "center" }}
@@ -136,7 +136,7 @@ export const Cart = () => {
                       <TableCell></TableCell>
                       <TableCell sx={{textAlign:'start'}}>Nombre</TableCell>
                       <TableCell >Cantidad</TableCell>
-                      <TableCell sx={{ fontWeight: "600" }} >Total x unidad</TableCell>
+                      <TableCell sx={{ fontWeight: "500", textAlign:'center' }} >Total x unidad</TableCell>
                       <TableCell ></TableCell>
                     </TableRow>
                   </TableHead>
@@ -162,7 +162,7 @@ export const Cart = () => {
                           {cartItem.product.name} x {cartItem.product.modalidadVenta}
                         </TableCell>
                         <TableCell sx={{padding:0}} ><Counter cartItem={cartItem} /></TableCell>
-                        <TableCell sx={{padding:0, fontWeight: "800" }} align="left">$ {new Intl.NumberFormat().format(cartItem.quantity * cartItem.product.precio)}</TableCell>
+                        <TableCell sx={{padding:0, fontWeight: "800" }} align="center">$ {new Intl.NumberFormat().format(cartItem.quantity * cartItem.product.precio)}</TableCell>
                         {/* {console.log(cartItem.quantity)} */}
                         <TableCell sx={{padding:0}} align="left">
                         <IconButton
@@ -181,19 +181,20 @@ export const Cart = () => {
               </TableContainer>
             
             <div
-              // style={{
-              //   backgroundColor: "lightgreen",
-              //   position: "sticky",
-              //   bottom: 32,
-              //   zIndex: 99,
-              //   display: "block",
-              //   textAlign:'center',
-              //   border: "1px solid lightgrey",
-              //   borderRadius: "0 0 10px 10px",
-              //   }}
+              style={{
+                // backgroundColor: "lightgreen",
+                // position: "sticky",
+                // bottom: 32,
+                // zIndex: 99,
+                display: "flex",
+                flexDirection:'column',
+                textAlign:'center',
+                // border: "1px solid lightgrey",
+                borderRadius: "0 0 10px 10px",
+                }}
             >
               <div 
-              style={{ display: "flex"}}
+              style={{display:'flex', margin:'auto'}}
               >
                 <p
                   style={{
@@ -209,8 +210,9 @@ export const Cart = () => {
                 <p
                   style={{
                     fontFamily: "sans-serif",
+                    margin: '20px',
                     fontSize: "16px",
-                    fontWeight: "800",
+                    fontWeight: "600",
                     color: "black",
                     borderBottom:'4px solid black',
                     borderTop:'4px solid black',
@@ -227,7 +229,7 @@ export const Cart = () => {
                     Continuar
                   </Button>
                   
-
+                      <Box>
                   <Dialog
                 open={openDatosCliente}
                 onClose={handleCloseOne}
@@ -274,6 +276,7 @@ export const Cart = () => {
                     </DialogActions>
                 </form>
             </Dialog>
+            </Box>
 
 
                   <Modal
