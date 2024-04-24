@@ -52,7 +52,7 @@ const fetchData = (param) => {
 
 useEffect(() => {
     fetchData();
-  }, [cambio]);
+  }, [pedidosCompletos,pedidosPendientes]);
 
 
   
@@ -76,7 +76,6 @@ const handleClickCompletos = () => {
 
 
 const handleCompletarPedido = (cliente) => {
-  const response = window.confirm('estás por completar el pedido, deseas confirmar ?')
   const newPedido = {
     name: cliente.name,
     phone: cliente.phone,
@@ -85,18 +84,15 @@ const handleCompletarPedido = (cliente) => {
     complete: true,
     _id: cliente._id
   }  
+  const response = window.confirm('estás por completar el pedido, deseas confirmar ?')
   if(response) {
-      pedidosTrue(newPedido);
-  } ;
+    if(newPedido._id !== undefined) {
+      updatePedido(newPedido._id, newPedido)
+    }
+  }
+
 }
 
-const pedidosTrue = (pedido) => {
-  // console.log(pedido._id)
-    if(pedido._id !== undefined) {
-    updatePedido(pedido._id, pedido)
-    setCambio(!cambio);
-  }
-}
 
 return (
     <div style={{ display: "block", marginBottom: "5%" }}>
