@@ -25,11 +25,11 @@ export const Cart = () => {
     top: "50%",
     left: "50%",
     transform: "translate(-50%, -50%)",
-    width: 200,
+    width: 300,
     bgcolor: "background.paper",
     border: "2px solid #000",
     boxShadow: 24,
-    p: 2,
+    p: 1,
   };
 
   const { setShowCart, setCart, cart, removeFromCart } = useCart();
@@ -277,15 +277,15 @@ export const Cart = () => {
             </Dialog>
 
 
-                  <Modal
+                  <Dialog
                     open={open}
                     onClose={handleClose}
                     aria-labelledby="modal-modal-title"
                     aria-describedby="modal-modal-description"
                   >
-                    <Box sx={style}>
+                    <DialogContent>
                       <div style={{textAlign:'center', fontFamily:'sans-serif'}}>
-                    <img src={logo} alt="logo" style={{width:'150px', height:'150px'}}/>
+                    <img src={logo} alt="logo" style={{width:'100px', height:'100px'}}/>
                     <h3 >Gracias por elegirnos !!</h3>
                     </div>
                       <Typography
@@ -302,8 +302,8 @@ export const Cart = () => {
                       <Typography id="modal-modal-description" sx={{ mt: 6 }}>
                         te contactaremos via WhatsApp para confirmar pedido
                       </Typography>
-                    </Box>
-                  </Modal>
+                    </DialogContent>
+                  </Dialog>
                 </div>
               </div>
                 <hr />
